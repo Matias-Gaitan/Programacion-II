@@ -1,2 +1,2 @@
-# Programaci-n-II
+# Programacion-II
 Repositorio para la materia Programación II
