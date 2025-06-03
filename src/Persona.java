@@ -45,29 +45,59 @@ public class Persona {
 
     //SETTERS
     public void setNombre(String nombre){
-        this.nombre = nombre;
+        if(nombre != null && !nombre.isEmpty()){
+            this.nombre = nombre;
+        }
+        else{
+            System.out.println("Error, el nombre no puede estar vacío.");
+            this.nombre = "Descnocido";
+        }
     }
     public void setApellido(String apellido){
-        this.apellido = apellido;
+        if(apellido != null && !apellido.isEmpty()){
+            this.apellido = apellido;
+        }
+        else{
+            System.out.println("Error, el apellido no puede estar vacío.");
+            this.apellido = "Desconocido";
+        }
     }
     public void setNumeroIdentificacion(String numeroIdentificacion){
-        this.numeroIdentificacion = numeroIdentificacion;
+        if(numeroIdentificacion != null && !numeroIdentificacion.trim().isEmpty()){
+            this.numeroIdentificacion = numeroIdentificacion;
+        }
+        else{
+            System.out.println("Error, el número de identificacion no puede estar vacío.");
+            this.numeroIdentificacion = "Desconocido";
+        }
     }
     public void setEdad(int edad){
         if(edad > 0){
             this.edad = edad;
         }
         else{
-            System.out.println("Error, la edad no puede ser 0 o negativa");
+            System.out.println("Error, la edad no puede ser 0 o negativa.");
             this.edad = 0;
         }
 
     }
     public void setDireccion(String direccion){
-        this.direccion = direccion;
+        if(direccion != null && !direccion.trim().isEmpty()){
+            this.direccion = direccion;
+        }
+        else{
+            System.out.println("Error, la dirección no puede estar vacía.");
+            this.direccion = "Desconocida";
+        }
     }
     public void setTelefono(String telefono){
-        this.telefono = telefono;
+        if(telefono != null && !telefono.trim().isEmpty()){
+            this.telefono = telefono;
+        }
+        else{
+            System.out.println("Error, el teléfono no puede estar vacío.");
+            this.telefono = "Desconocido";
+        }
     }
 
     public void mostrarInformacion(){

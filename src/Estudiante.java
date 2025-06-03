@@ -13,7 +13,7 @@ public class Estudiante extends Persona{
                       String numeroIdentificacion, int edad,
                       String direccion, String telefono,
                       String matricula, String carrera, double promedio){
-        super();
+        super(nombre, apellido, numeroIdentificacion, edad, direccion, telefono);
         this.setMatricula(matricula);
         this.setCarrera(carrera);
         this.setPromedio(promedio);
@@ -31,13 +31,30 @@ public class Estudiante extends Persona{
     }
 
     public void setMatricula(String matricula){
-        this.matricula = matricula;
+        if(matricula != null && !matricula.trim().isEmpty()){
+            this.matricula = matricula;
+        }
+        else{
+            System.out.println("Error, la matrícula no puede estar vacía.");
+            this.matricula = "Desconocida";
+        }
     }
     public void setCarrera(String carrera){
-        this.carrera = carrera;
+        if(carrera != null && !carrera.trim().isEmpty()){
+            this.carrera = carrera;
+        }
+        else{
+            System.out.println("Error, la carrera no puede estar vacía.");
+            this.carrera = "Desconocida";
+        }
     }
     public void setPromedio(double promedio){
-        this.promedio = promedio;
+        if(promedio > 0){
+            this.promedio = promedio;
+        }
+        else{
+            System.out.println("Error, el promedio no puede ser 0 o negativo.");
+        }
     }
 
     public void estudiar(){

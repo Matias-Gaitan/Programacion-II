@@ -11,7 +11,7 @@ public class Profesor extends Persona{
     public Profesor(String nombre, String apellido, String numeroIdentificacion,
                     int edad, String direccion, String telefono,
                     String departamento, double salario, int añosExperiencia){
-        super();
+        super(nombre, apellido, numeroIdentificacion, edad, direccion, telefono);
         this.setDepartamento(departamento);
         this.setSalario(salario);
         this.setAñosExperiencia(añosExperiencia);
@@ -28,7 +28,13 @@ public class Profesor extends Persona{
     }
 
     public void setDepartamento(String departamento){
-        this.departamento = departamento;
+        if(departamento != null && !departamento.isEmpty()){
+            this.departamento = departamento;
+        }
+        else{
+            System.out.println("El departamento no puede estar vacío.");
+            this.departamento = "Desconocido";
+        }
     }
     public void setSalario(double salario){
         if(salario > 0){
@@ -40,17 +46,23 @@ public class Profesor extends Persona{
         }
     }
     public void setAñosExperiencia(int añosExperiencia){
-        this.añosExperiencia = añosExperiencia;
+        if(añosExperiencia >= 0){
+            this.añosExperiencia = añosExperiencia;
+        }
+        else{
+            System.out.println("Error, los años de experiencia no pueden ser negativos.");
+            this.añosExperiencia = 0;
+        }
     }
 
 
     public void enseñar(){
-        System.out.println("El profesor "+getNombre()+" "+getApellido()+"está enseñando en el departamento de "+this.getDepartamento());
+        System.out.println("El profesor "+getNombre()+" "+getApellido()+" está enseñando en el departamento de "+this.getDepartamento());
     }
     @Override public void mostrarInformacion(){
         super.mostrarInformacion();
         System.out.println("Departamento :"+this.getDepartamento());
-        System.out.println("Salario :"+this.getSalario());
+        System.out.println("Salario : $"+this.getSalario());
         System.out.println("Años de experiencia :"+this.getAñosExperiencia());
     }
 }
