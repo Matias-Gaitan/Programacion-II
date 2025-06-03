@@ -54,12 +54,32 @@ public class Persona {
         this.numeroIdentificacion = numeroIdentificacion;
     }
     public void setEdad(int edad){
-        this.edad = edad;
+        if(edad < 0){
+            this.edad = edad;
+        }
+        else{
+            System.out.println("Error, la edad no puede ser genativa");
+            this.edad = 0;
+        }
+
     }
     public void setDireccion(String direccion){
         this.direccion = direccion;
     }
     public void setTelefono(String telefono){
         this.telefono = telefono;
+    }
+
+    public void mostrarInformacion(){
+        System.out.println("Nombre :"+this.getNombre());
+        System.out.println("Apellido :"+this.getApellido());
+        System.out.println("Numero de identificación :"+this.getNumeroIdentificacion());
+        System.out.println("Edad :"+this.getEdad());
+        System.out.println("Dirección :"+this.getDireccion());
+        System.out.println("Teléfono :"+this.getTelefono());
+    }
+
+    public void saludar(){
+        System.out.println("Hola, mi nombre es "+this.getNombre()+" "+this.getApellido());
     }
 }
