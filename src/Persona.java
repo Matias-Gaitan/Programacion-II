@@ -54,11 +54,11 @@ public class Persona {
         this.numeroIdentificacion = numeroIdentificacion;
     }
     public void setEdad(int edad){
-        if(edad >= 0){
+        if(edad > 0){
             this.edad = edad;
         }
         else{
-            System.out.println("Error, la edad no puede ser 0 o genativa");
+            System.out.println("Error, la edad no puede ser 0 o negativa");
             this.edad = 0;
         }
 
