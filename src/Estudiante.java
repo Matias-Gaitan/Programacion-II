@@ -44,7 +44,7 @@ public class Estudiante extends Persona{
         System.out.println("El estudiante "+getNombre()+" "+getApellido()+" está estudiando "+this.getCarrera());
     }
 
-    public void mostrarInformacion(){
+    @Override public void mostrarInformacion(){
         super.mostrarInformacion();
         System.out.println("Matrícula :"+this.getMatricula());
         System.out.println("Carrera :"+this.getCarrera());
